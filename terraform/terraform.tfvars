@@ -1,2 +1,2 @@
-﻿project_id = "wired-ripsaw-390718"
+﻿project_id = "your-project-id"
 region     = "us-central1"

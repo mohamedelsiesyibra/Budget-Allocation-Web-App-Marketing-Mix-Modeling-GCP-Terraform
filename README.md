@@ -24,6 +24,7 @@ This project demonstrates the end-to-end workflow of a Marketing Mix Modeling (M
 - **Storage Layer (Google Cloud Storage):** Model and artifact storage
 - **Visualization & Budget Allocation (Streamlit):** Interactive web interface
 - **Infrastructure as Code (Terraform):** Automated deployment
+- **Cloud Scheduler:** Automated scheduling of model training jobs
 
 ## Features
 
@@ -32,7 +33,7 @@ This project demonstrates the end-to-end workflow of a Marketing Mix Modeling (M
 - ⚙️ Configurable model structure
 - 📈 Interactive budget optimization
 - 🔄 Automated infrastructure deployment
-
+- ⏰ Automated model retraining with Cloud Scheduler
 
 ## Tech Stack
 
@@ -42,3 +43,13 @@ This project demonstrates the end-to-end workflow of a Marketing Mix Modeling (M
 - **Google Cloud Storage:** Model artifact and data storage
 - **Streamlit:** Interactive UI for budget allocation scenarios
 - **Terraform:** Infrastructure as code for consistent and reliable deployments
+- **Cloud Scheduler:** Cron job scheduling for automated model training
+
+## Scheduled Training
+
+The model training pipeline is automated using Cloud Scheduler:
+
+- **Frequency:** Weekly retraining on Sunday at 00:00 UTC
+- **Trigger:** HTTP POST request to Cloud Run training service
+- **Monitoring:** Integrated with Cloud Logging for job execution tracking
+- **Error Handling:** Automated alerts on training job failures
